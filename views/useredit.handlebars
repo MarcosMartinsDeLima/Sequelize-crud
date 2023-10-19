@@ -1,0 +1,55 @@
+<h1>Editando: {{User.name}}</h1>
+<form action="/users/update" method="post" class="form">
+<input type="hidden" name="id" value="{{User.id}}">
+    <div class="form-control">
+        <label for="name">Nome:</label>
+        <input type="text" name="name" placeholder="Digite o nome do usuario" value="{{User.name}}">
+    </div>
+    <div class="form-control">
+        <label for="occupation">Profissão:</label>
+        <input type="text" name="occupation" placeholder="Digite a profissão" value="{{User.occupation}}">
+    </div>
+    <div class="form-checkbox">
+        {{#if user.newsLetter}}
+        <input type="checkbox" name="newsLetter" checked>
+        {{else }}
+        <input type="checkbox" name="newsLetter">
+        {{/if}}
+        <label for="newsletter">enviar promoções?</label>
+        
+    </div>
+    <div class="cadastrar">
+        <input type="submit" value="editar" >
+    </div>
+</form>
+
+<div class="address-container">
+    <h2>Endereço:</h2>
+    <form action="/users/address" method="post">
+        <input type="hidden" name="UserId" value="{{User.id}}">
+        <div class="form-control">
+            <label for="street">rua:</label>
+            <input type="text" name="street" placeholder="Digite sua rua">
+        </div>
+        <div class="form-control">
+            <label for="number">número:</label>
+            <input type="text" name="number" placeholder="Digite seu número">
+        </div>
+         <div class="form-control">
+            <label for="city">cidade:</label>
+            <input type="text" name="city" placeholder="Digite sua cidade">
+        </div>
+        <input type="submit" value="Incluir endereço" class="incluir">
+    </form>
+    <div class="address-list">
+        <h2>Lista de endereços:</h2>
+        {{#each Address}}
+        <div>{{this.street}}-{{this.number}}-{{this.city}}
+        <form action="/address/delete" method="post">
+            <input type="hidden" name="id" value="{{this.id}}">
+            <input type="submit" value="Remover">
+        </form>
+        </div>
+        {{/each}}
+    </div>
+</div>
