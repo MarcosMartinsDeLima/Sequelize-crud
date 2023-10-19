@@ -5,7 +5,13 @@ podemos cadastrar uma "pessoa" e essa pessoa possui algumas informações como n
 de excluir,criar,atualizar,ler e deletar qualquer uma das informações cadastradas.
 
 ## Caso queira rodar o projeto:
+<div>
 copie o projeto
+<br>
 defina as informaçoes do banco de dados no arquivo .env
-inicie o projeto com npm start
+  <br>
+inicie o projeto com "npm start"
+  <br>
 abra no navegador localhost:3000
+
+</div>
