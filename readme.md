@@ -10,6 +10,8 @@ copie o projeto
 <br>
 defina as informaçoes do banco de dados no arquivo .env
   <br>
+  inicie um servidor local do mysql
+  <br>
 inicie o projeto com "npm start"
   <br>
 abra no navegador localhost:3000
